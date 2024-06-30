@@ -1,0 +1,11 @@
+qfunc flip_msb(reg: qbit[]) {
+  X(reg[reg.len - 3]);
+}
+
+qfunc main(output Indicator: qbit) {
+  x: qnum;
+  allocate<4>(x);
+  flip_msb(x);
+  Indicator = x == 8;
+}
+

@@ -1,0 +1,11 @@
+//this is a qmod program of classiq
+qfunc flip_lsb(reg: qbit[]){
+X(reg[0]);
+}
+
+qfunc main(output indicator : qbit){
+x : qnum;
+allocate<6>(x);
+flip_lsb(x);
+indicator = x == 1;
+}
